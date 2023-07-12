@@ -61,8 +61,8 @@ async def start(
         else:
             # それ以外はインスタンスが削除されている可能性があるためその旨を返却
             await ctx.respond(f"サーバが削除されている可能性があります！ \n mixelPooooooに問い合わせてね。 \n Error! state:{ins_state_name}")
-    except:
-            await ctx.respond(f"サーバの起動に失敗しました…。mixelPooooooに問い合わせてね。")
+    except Exception as e:
+            await ctx.respond(f"サーバの起動に失敗しました…。mixelPooooooに問い合わせてね。エラー詳細：{e}")
     return
 
 # サーバ停止コマンド
